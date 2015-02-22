@@ -2,6 +2,15 @@
 @import "_mixins";
 @import "../javascripts/vendor/foundation/scss/foundation";
 
-ul {
-	list-style-type: none;
+body {
+	ul {
+		list-style-type: none;
+	}
+
+	#main {
+		padding: rem-calc(14);
+	}	
 }
+
+
+
