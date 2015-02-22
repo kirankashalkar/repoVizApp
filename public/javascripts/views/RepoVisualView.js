@@ -73,7 +73,7 @@ define([
 		        tooltip: {
 		        	shared: true,
 		        	useHTML: true,
-		        	headerFormat: '<large>{series.name}</large><table>',
+		        	headerFormat: '<large><b>{series.name}</b></large><table>',
 		            pointFormat: '<tr>' + 
 		            	'<td style="color: {series.color}">Forks: </td>' +
 		                '<td style="text-align: right"><b>{point.x}</b></td>' + 
