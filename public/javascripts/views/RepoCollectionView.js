@@ -4,19 +4,16 @@
 
 define([
 	'marionette',
-	'./RepoItemView'
+	'./RepoItemView',
+	'./EmptyView'
 ], function(
 	Marionette,
-	RepoItemView) {
-
-	var NoChildrenView = Backbone.Marionette.ItemView.extend({
-		template: "<div>No such organization.</div>"
-	});
-
+	RepoItemView,
+	EmptyView) {
 
 	var RepoCollectionView = Marionette.CollectionView.extend({
 
-		emptyView: NoChildrenView,
+		emptyView: EmptyView,
 		
 		childView: RepoItemView,
 

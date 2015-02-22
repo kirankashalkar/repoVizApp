@@ -11,6 +11,9 @@ require.config({
         text: 'vendor/require/text',
         d3: 'vendor/d3/d3',
         FastClick: 'vendor/fastclick/lib/fastclick',
+        highcharts: 'vendor/highcharts/highcharts',
+        highchartsmore: 'vendor/highcharts/highcharts-more',
+        exporting: 'vendor/highcharts/exporting',
 
         /* Foundation */
         'foundation.core': 'vendor/foundation/js/foundation',
@@ -54,11 +57,24 @@ require.config({
             deps: ['backbone'],
             exports: 'Marionette'
         },
-
         'FastClick': {
         	deps: [],
         	exports: 'FastClick'
         },
+
+        'highcharts': {
+            deps: ['jquery'],
+            exports: 'highcharts'
+        },
+        'highchartsmore': {
+            deps: ['highcharts', 'jquery'],
+            exports: 'highchartsmore'
+        },
+        'exporting': {
+            deps: ['highcharts', 'jquery'],
+            exports: 'highcharts'
+        },
+        
 
         /* Foundation */
         'foundation.core': {

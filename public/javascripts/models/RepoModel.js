@@ -12,8 +12,9 @@ define([
 		defaults: {
 			name: null,
 			forks_count: 0,
+			open_issues_count: 0,
 			stargazers_count: 0,
-			commit_url: null
+			url: null
 		}
 	});
 
