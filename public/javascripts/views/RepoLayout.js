@@ -24,28 +24,27 @@ define([
             _.extend(this, options);
 
             this.vent.on('input:repoName', function(repoName) {
-                console.log('repoName', repoName);
-                self.myCollection = new RepoCollection({
+                self.collection = new RepoCollection({
                     repoName: repoName
                 });
 
                 self.repo_view = new RepoCollectionView({
-                    collection: self.myCollection
+                    collection: self.collection
                 });
 
-                self.myCollection.fetch({
+                self.collection.on('change', function() {
+                    self.repoView.show(self.repo_view);
+                });
+
+                self.collection.fetch({
                     success: function() {
-                        self.$el.append(render();
-                        self.repoView.show(self.repo_view)
+                        self.repoView.show(self.repo_view);
+                    },
+                    error: function() {
+                        self.repoView.show(new RepoCollectionView());
                     }
                 });
-
             });
-        },
-
-        onRender: function() {
-            this.repo_view.render();
-            this.repoView.show(this.repo_view);
         },
 
         regions: {

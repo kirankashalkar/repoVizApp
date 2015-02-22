@@ -10,7 +10,7 @@ define([
 	RepoItemView) {
 
 	var NoChildrenView = Backbone.Marionette.ItemView.extend({
-		template: "<div>Loading data... </div>"
+		template: "<div>No such organization.</div>"
 	});
 
 
@@ -34,7 +34,7 @@ define([
 			// return it
 			return view;
 		}
-		
+
 	});
 
 	return RepoCollectionView;
