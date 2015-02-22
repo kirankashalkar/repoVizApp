@@ -4,11 +4,13 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Github Repo Viewer</title>
-        <link rel="stylesheet" href="/stylesheets/style.css" />
+        <link rel="stylesheet" href="/stylesheets/app.css" />
     </head>
     <body>
-        <div id="title"> Welcome to {{title}} </div>
-        <div id="main_ui"></div>
+    	<div>
+    		<header></header>
+    		<div id="main"></div>
+    	</div>
         <script data-main="/javascripts/main" src="javascripts/vendor/require/require.js"></script>
     </body>
 </html>
