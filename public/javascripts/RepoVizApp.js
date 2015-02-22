@@ -37,13 +37,13 @@ function(
         return compiledTemplate.render(data, partials);
     },
 
-
-    window.RepoVizApp = new Marionette.Application();
+    window.RepoVizApp = new Marionette.Application({});
 
     RepoVizApp.addRegions({
         headerRegion: "header",
+        inputRegion: "#input",
         mainRegion: "#main"
-    })
+    });
 
     RepoVizApp.addInitializer(function(options) {
         Backbone.history.start();

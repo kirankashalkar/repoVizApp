@@ -16,6 +16,10 @@ define([
         
         model: new WelcomeModel(),
 
+        initialize: function(options) {
+            _.extend(this, options);
+        },
+
         // View Event Handlers
         events: {
 

@@ -6151,5 +6151,7 @@ th.hide-for-touch {
 
   th.show-for-print {
     display: table-cell !important; } }
+ul {
+  list-style-type: none; }
 
 /*# sourceMappingURL=app.css.map */

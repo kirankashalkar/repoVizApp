@@ -9,8 +9,7 @@ define([
     	//"index" must be a method in RepoVizRouter's controller
         appRoutes: {
 			"": "index",
-            "repos": "repos",
-            "commits": "commits"
+            "repos": "repos"
         }
     });
 });

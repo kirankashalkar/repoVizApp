@@ -6,6 +6,10 @@ define([
     HeaderTpl) {
     //ItemView provides some default rendering logic
     return Marionette.ItemView.extend({
-        template: HeaderTpl
+        template: HeaderTpl,
+
+        initialize: function(options) {
+            _.extend(this, options);
+        }
     });
 });

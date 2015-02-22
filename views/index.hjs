@@ -9,7 +9,8 @@
     <body>
     	<div>
     		<header></header>
-    		<div id="main"></div>
+            <div id="input" class="row"></div>
+    		<div id="main" class="row"></div>
     	</div>
         <script data-main="/javascripts/main" src="javascripts/vendor/require/require.js"></script>
     </body>

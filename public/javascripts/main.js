@@ -164,5 +164,7 @@ require([
         });
 
         RepoVizApp.start();
+
+        $(document).foundation();
 });
 
