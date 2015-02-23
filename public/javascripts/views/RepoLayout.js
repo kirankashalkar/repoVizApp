@@ -89,6 +89,11 @@ define([
                         if (self.commitView) {
                             self.commitView.empty();
                         }
+                    },
+                    success: function() {
+                        if (self.commitView) {
+                            self.commitView.empty();
+                        }
                     }
                 });
             });
