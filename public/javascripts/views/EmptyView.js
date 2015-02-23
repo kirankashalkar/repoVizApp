@@ -1,9 +1,14 @@
+/**
+ * Empty view
+ */
+
 define([
 	'marionette'
 ], function (Marionette) {
-	
+
 	var EmptyView = Backbone.Marionette.ItemView.extend({
-		template: "<div>No such organization.</div>"
+		// overkill to add a new template file and make this generic right now
+		template: '<h1 class="empty">Organization Not Found</h1>'
 	});
 
 	return EmptyView;

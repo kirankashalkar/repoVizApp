@@ -1,6 +1,5 @@
 /** 
- * Implements the repos layout
- *
+ * Main repo view layout
  */
 define([
     'marionette',

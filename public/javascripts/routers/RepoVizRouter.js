@@ -1,3 +1,6 @@
+/**
+ * RepoViz App router
+ */
 define([
 	'marionette', 
 	'../controllers/RepoVizController'
@@ -6,7 +9,7 @@ define([
 	RepoVizController) {
 
     return Marionette.AppRouter.extend({
-    	//"index" must be a method in RepoVizRouter's controller
+    	// names correspond to methods in RepoVizRouter's controller
         appRoutes: {
 			"": "index",
             "repos": "repos"

@@ -1,6 +1,6 @@
 
 /**
- * Commit API collection
+ * Commits collection
  */
 
 define([
@@ -15,7 +15,7 @@ define([
 		},
 
 		model: CommitModel,
-		// the commits do come in time order, but just to be sure
+		// the commits do come in time order, but best to be sure
 		comparator: function(a, b) {
 			aDate = new Date(a.get('commit').author.date);
 			bDate = new Date(b.get('commit').author.date);

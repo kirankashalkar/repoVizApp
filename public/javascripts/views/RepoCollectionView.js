@@ -1,5 +1,5 @@
 /**
- * Repo API view
+ * Repos list view
  */
 
 define([
@@ -24,11 +24,8 @@ define([
 		},
 
 		buildChildView: function(child, ChildViewClass, childViewOptions){
-			// build the final list of options for the childView class
 			var options = _.extend({model: child}, childViewOptions);
-			// create the child view instance
 			var view = new ChildViewClass(options);
-			// return it
 			return view;
 		}
 

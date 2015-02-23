@@ -1,5 +1,5 @@
 /**
- * The main application module
+ * The main RepoViz App module
  */
 define([
     'hogan', 
@@ -53,7 +53,7 @@ function(
     });
 
     RepoVizApp.on("close", function(){
-        // cleanup here
+        console.log("RepoVizApp stopped");
     });
 
     return RepoVizApp;

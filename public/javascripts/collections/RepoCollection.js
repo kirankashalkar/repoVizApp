@@ -1,5 +1,5 @@
 /**
- * Repo API collection
+ * Repos collection
  */
 
 define([

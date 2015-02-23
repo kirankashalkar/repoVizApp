@@ -1,19 +1,15 @@
 /**
- * Commit API view
+ * Commits list view
  */
 
 define([
 	'marionette',
-	'./CommitItemView',
-	'./EmptyView'
+	'./CommitItemView'
 ], function(
 	Marionette,
-	CommitItemView,
-	EmptyView) {
+	CommitItemView) {
 
 	var CommitCollectionView = Marionette.CollectionView.extend({
-
-		emptyView: EmptyView,
 		
 		childView: CommitItemView,
 
@@ -24,16 +20,13 @@ define([
 		},
 
 		buildChildView: function(child, ChildViewClass, childViewOptions){
-			// build the final list of options for the childView class
 			var options = _.extend({model: child}, childViewOptions);
-			// create the child view instance
 			var view = new ChildViewClass(options);
-			// return it
 			return view;
 		},
 
 		onRender: function() {
-			// could've done this with composite view but overkill here
+			// could've done this with composite view but overkill for this assignment
 			this.$el
 				.addClass("large-12")
 				.addClass("columns")

@@ -1,12 +1,12 @@
 /**
- * Repo API model
+ * Repo model
  */
 
 define([
 	'backbone'
 ], function(Backbone) {
 	var RepoModel = Backbone.Model.extend({
-		// url: "https://api.github.com/repos/:org_name",
+		// url: "https://api.github.com/repos/:org_name/:name",
 		idAttribute: "name",
 
 		defaults: {

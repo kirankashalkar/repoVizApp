@@ -1,3 +1,6 @@
+/**
+ * Main require js file to include
+ */
 require.config({
     paths: {
     	jquery: 'vendor/jquery/jquery',

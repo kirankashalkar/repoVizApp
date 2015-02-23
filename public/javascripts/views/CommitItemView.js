@@ -1,5 +1,5 @@
 /**
- * Commit API view
+ * Commits item view
  */
 
 define([

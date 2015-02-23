@@ -1,1 +1,1 @@
-<div class="row welcome"> Welcome to {{title}} </div></div>
+<h2 class="row welcome"> Welcome to {{title}} </h2>

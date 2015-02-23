@@ -1,3 +1,6 @@
+/**
+ * Input view
+ */
 define([
     'marionette', 
     'text!../templates/input.tpl'
@@ -14,11 +17,25 @@ define([
 
         ui: {
         	'submitButton': '#submitButton',
-        	'repoName': '#repoName'
+        	'repoName': '#repoName',
         },
 
         events: {
-        	'click @ui.submitButton': 'queryRepo'
+        	'click @ui.submitButton': 'queryRepo',
+        	'keypress @ui.repoName': 'checkReturn'
+        },
+
+        // capture return key to accept input for checking
+        // would do it via events on the vent to the approuter for a prod app
+        checkReturn: function(e) {
+        	if (e.which == 13) {
+        		e.preventDefault();
+        		if (window.location.href.indexOf('#repos') == -1) {
+        			window.location.href += '#repos';
+        		}
+        		// this.ui.submitButton.click();
+        		this.queryRepo();
+        	}
         },
 
         queryRepo: function() {

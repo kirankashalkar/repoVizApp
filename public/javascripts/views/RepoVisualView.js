@@ -1,5 +1,5 @@
 /**
- * Repo API visual view
+ * Repo Visual view
  */
 
 define([

@@ -1,3 +1,6 @@
+/**
+ * RepoViz App main controller
+ */
 define([
     'RepoVizApp', 
     'backbone', 

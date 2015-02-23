@@ -6158,5 +6158,9 @@ th.hide-for-touch {
   padding: 0.875rem; }
   #main ul {
     list-style-type: none; }
+  #main .welcome {
+    text-align: center; }
+  #main .empty {
+    text-align: center; }
 
 /*# sourceMappingURL=app.css.map */
