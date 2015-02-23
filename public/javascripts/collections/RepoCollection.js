@@ -9,8 +9,6 @@ define([
 	Backbone,
 	RepoModel) {
 	var RepoCollection = Backbone.Collection.extend({
-		// url: "https://api.github.com/orgs/:org/repos",
-		// url: "https://api.github.com/orgs/Netflix/repos",
 		url: function() {
 			return 'https://api.github.com/orgs/' + this.repoName + '/repos'
 		},

@@ -40,7 +40,6 @@ function(
     window.RepoVizApp = new Marionette.Application({});
 
     RepoVizApp.addRegions({
-        headerRegion: "header",
         inputRegion: "#input",
         mainRegion: "#main"
     });

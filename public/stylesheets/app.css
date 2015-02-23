@@ -6151,9 +6151,12 @@ th.hide-for-touch {
 
   th.show-for-print {
     display: table-cell !important; } }
-body ul {
-  list-style-type: none; }
-body #main {
+#input {
+  margin-top: 20px; }
+
+#main {
   padding: 0.875rem; }
+  #main ul {
+    list-style-type: none; }
 
 /*# sourceMappingURL=app.css.map */

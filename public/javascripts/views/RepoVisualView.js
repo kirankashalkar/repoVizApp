@@ -26,18 +26,21 @@ define([
 
 		onRender: function() {
 
+			var vent = this.vent;
+
 			// massage data to suit highcharts API
 			var series = [];
 
 			this.collection.models.forEach(function(model) {
 				series.push({
 					name: model.get('name'),
-					data: [[
-						model.get('open_issues_count'),
-						model.get('stargazers_count'),
-						model.get('forks_count')
-						
-					]]
+					data: [{
+						name: model.get('name'),
+						url: model.get('url'),
+						z: model.get('open_issues_count'),
+						y: model.get('stargazers_count'),
+						x: model.get('forks_count')
+					}]
 				});
 			});
 
@@ -46,7 +49,7 @@ define([
 		        chart: {
 		            type: 'bubble',
 		            zoomType: 'xy',
-		            plotBorderWidth: 1,
+		            plotBorderWidth: 1
 		        },
 
 		        legend: {
@@ -59,14 +62,13 @@ define([
 
 		        xAxis: {
 		        	title: {
-		        		text: 'Forks'
-		        	},
-
+		        		text: '# Forks'
+		        	}
 		        },
 
 		        yAxis: {
 		        	title: {
-		        		text: 'Stars'
+		        		text: '# Stars'
 		        	}
 		        },
 
@@ -74,15 +76,34 @@ define([
 		        	shared: true,
 		        	useHTML: true,
 		        	headerFormat: '<large><b>{series.name}</b></large><table>',
-		            pointFormat: '<tr>' + 
-		            	'<td style="color: {series.color}">Forks: </td>' +
-		                '<td style="text-align: right"><b>{point.x}</b></td>' + 
-		                '<td style="color: {series.color}">Stars: </td>' +
-		                '<td style="text-align: right"><b>{point.y}</b></td>' +
-		                '<td style="color: {series.color}">Issues: </td>' +
-		                '<td style="text-align: right"><b>{point.z}</b></td>' +
-		                '</tr>',
-		            footerFormat: '</table><a href="#commits" class="commitsLink"><small>Check latest commits</small></a>'
+		        	pointFormatter: function () {
+		                var s = 
+		                	'<tr>' + 
+				            	'<td style="color:' + this.color + '">Forks: </td>' +
+				                '<td style="text-align: right"><b>' + this.x + '</b></td>' + 
+				                '<td style="color:' + this.color + '">Stars: </td>' +
+				                '<td style="text-align: right"><b>' + this.y + '</b></td>' + 
+				                '<td style="color:' + this.color + '">Issues: </td>' +
+				                '<td style="text-align: right"><b>' + this.z + '</b></td>' + 
+				            '</tr>';
+						
+
+		                return s;
+		            },
+		            footerFormat: '</table>'
+		        },
+
+		        plotOptions: {
+		        	series: {
+		        		cursor: 'pointer',
+		        		point: {
+		        			events: {
+		        				click: function() {
+		        					vent.trigger('repo:selected', this.url);
+		        				}
+		        			}
+		        		}
+		        	}
 		        },
 
 		        series: series

@@ -14,10 +14,9 @@
   }
 }
 
-@mixin vertical-align {
+@mixin translate($percent) {
   position: relative;
-  top: 50%;
-  @include prefixed(transform, translateY(-50%));
+  @include prefixed(transform, translateY($percent));
 }
 
 @mixin background-radial-gradient ($centerColor,$outsideColor) {

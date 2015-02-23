@@ -4,5 +4,5 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'RepoViz' });
+  res.render('index', { title: 'Github RepoViz App' });
 };

@@ -2,25 +2,18 @@ define([
     'RepoVizApp', 
     'backbone', 
     'marionette', 
-    '../views/WelcomeView', 
-    '../views/HeaderView',
+    '../views/WelcomeView',
     '../views/InputView',
-    '../views/RepoLayout',
-    '../views/CommitLayout',
+    '../views/RepoLayout'
 ], function (
     RepoVizApp, 
     Backbone, 
     Marionette, 
     WelcomeView, 
-    HeaderView,
     InputView,
-    RepoLayout,
-    CommitLayout) {
+    RepoLayout) {
 
     var vent = new Backbone.Wreqr.EventAggregator();
-    var headerView = new HeaderView({
-                vent: vent
-    });
 
     var inputView = new InputView({
         vent: vent
@@ -36,10 +29,7 @@ define([
 
     return Backbone.Marionette.Controller.extend({
         initialize: function (options) {
-
-            RepoVizApp.headerRegion.show(headerView);
             RepoVizApp.inputRegion.show(inputView);
-
         },
         //gets mapped to in RepoVizRouter's appRoutes
         index: function () {

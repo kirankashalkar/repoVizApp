@@ -2,14 +2,25 @@
 @import "_mixins";
 @import "../javascripts/vendor/foundation/scss/foundation";
 
-body {
+
+#input {
+	margin-top: 20px;
+}
+
+#main {
+	padding: rem-calc(14);
+
 	ul {
 		list-style-type: none;
 	}
 
-	#main {
-		padding: rem-calc(14);
-	}	
+	#repoView {
+
+	}
+
+	#commitView {
+
+	}
 }
 
 
